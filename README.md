@@ -16,7 +16,6 @@ npm install
 ## How to run
 
 
-```bash
 npm start
 ```
 
@@ -25,7 +24,7 @@ npm start
 Open a separate terminal to start the client:
 
 ```bash
-cd react-contact-manager
+
 npm start
 ```
 
