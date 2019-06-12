@@ -9,3 +9,13 @@ export function loginUser(user){
       })
     }
   }
+
+
+  export function logoutUser(user){
+    return dispatch => {
+      return dispatch({
+        type: 'SIGNOUT',
+        payload: null
+      })
+    }
+  }

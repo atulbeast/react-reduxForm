@@ -11,6 +11,26 @@ const defaultState = {
   
 export default (state=defaultState, action={}) => {
    switch (action.type) {
+    case 'SIGNOUT_PENDING': {
+        return {
+        ...state,
+        loading: true
+        }
+    }
+    case 'SIGNOUT_FULFILLED': {
+        localStorage.removeItem('d_token');
+        return {
+        ...state,
+        loading: false
+        }
+    }
+    case 'SIGNOUT_REJECTED': {
+        return {
+            ...state,
+            errors: {},
+            loading: false
+            }
+    }
         case 'AUTH_USER_PENDING': {
             return {
             ...state,
@@ -39,6 +59,7 @@ export default (state=defaultState, action={}) => {
             loading: false
             }
         }
+
         default:
         return state;
 }

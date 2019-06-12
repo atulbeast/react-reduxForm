@@ -19,11 +19,11 @@ export function newContact() {
   }
 }
 
-export function saveContact(user) {
+export function saveUser(user) {
   
   return dispatch => {
     return dispatch({
-      type: 'SAVE_CONTACT',
+      type: 'SAVE_USER',
       payload: client.post(url, {user: user})
     })
   }

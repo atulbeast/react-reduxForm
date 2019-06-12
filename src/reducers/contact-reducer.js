@@ -41,14 +41,14 @@ export default (state=defaultState, action={}) => {
       }
     }
 
-    case 'SAVE_CONTACT_PENDING': {
+    case 'SAVE_USER_PENDING': {
       return {
         ...state,
         loading: true
       }
     }
 
-    case 'SAVE_CONTACT_FULFILLED': {
+    case 'SAVE_USER_FULFILLED': {
       return {
         ...state,
         user: action.payload.data ,//[...state.users, action.payload.data],
@@ -57,7 +57,7 @@ export default (state=defaultState, action={}) => {
       }
     }
 
-    case 'SAVE_CONTACT_REJECTED': {
+    case 'SAVE_USER_REJECTED': {
       const data = action.payload.response.data;
       // convert feathers error formatting to match client-side error formatting
       const {  name, phone, email,password } = data.errors;

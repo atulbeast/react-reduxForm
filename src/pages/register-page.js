@@ -1,35 +1,21 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import { fetchContacts, saveContact,newContact } from '../actions/user-actions';
+import {  saveUser } from '../actions/user-actions';
 import { SubmissionError } from 'redux-form';
 import RegisterForm from '../components/register-form';
 
 class RegisterPage extends Component {
 
-    componentDidMount = () => {
-        const { _id } = this.props.match.params;
-        if(_id){
-          this.props.fetchContact(_id)
-        } else {
-          this.props.newContact();
-        }
-      }
-    
+ 
       handleSubmit = (contact) => {
         
-        if(!contact._id) {
-          return this.props.saveContact(contact)
+       
+          return this.props.saveUser(contact)
             .then(response => this.setState({ redirect:true }))
             .catch(err => {
                throw new SubmissionError(this.props.errors)
              })
-        } else {
-          return this.props.updateContact(contact)
-            .then(response => this.setState({ redirect:true }))
-            .catch(err => {
-               throw new SubmissionError(this.props.errors)
-             })
-        }
+       
       }
 
   render() {
@@ -51,4 +37,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {fetchContacts, saveContact,newContact})(RegisterPage);
+export default connect(mapStateToProps, { saveUser})(RegisterPage);

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Container, Divider, Grid, Header, Image, Menu, Segment } from 'semantic-ui-react'
-
+import { Link } from 'react-router-dom';
 const ThemingLayout = () => (
   <Container style={{ marginTop: '3em' }}>
     <Header as='h1'>Theming Examples</Header>
@@ -9,8 +9,11 @@ const ThemingLayout = () => (
       
       <Segment inverted>
       <Header as='h2'> Navigate to: </Header>
-          <Button inverted>Articles</Button>
-          <Button color='blue' inverted>Users</Button>
+          <Button inverted>
+          <Link to={`/users`} >User</Link>
+          
+          </Button>
+          <Button color='blue' inverted><Link to={`/articles`} >Articles</Link></Button>
       </Segment>
     </Header>
 
