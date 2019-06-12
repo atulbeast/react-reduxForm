@@ -13,10 +13,7 @@ cd your-repo-folder
 npm install
 
 
-## How to run
 
-
-npm start
 ```
 
 
@@ -30,6 +27,9 @@ npm start
 
 Your default web browser will be launched automatically with the url http://localhost:3000
 
+semantic-ui is used for Styling Component
+
+ 
 
 
 # react-reduxForm
