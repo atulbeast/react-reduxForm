@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import { Redirect } from 'react-router';
 import { SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
-import { newContact, saveContact, fetchContact, updateContact } from '../actions/contact-actions';
+import { newContact, saveContact, fetchContact, updateContact } from '../actions/user-actions';
 import ContactForm from '../components/contact-form';
 
 
@@ -43,7 +43,7 @@ class ContactFormPage extends Component {
         {
           this.state.redirect ?
           <Redirect to="/" /> :
-          <ContactForm contact={this.props.contact} loading={this.props.loading} onSubmit={this.submit} />
+          <ContactForm contact={this.props.contact} error={this.props.errors} loading={this.props.loading} onSubmit={this.submit} />
         }
       </div>
     )

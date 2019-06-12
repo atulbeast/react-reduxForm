@@ -1,6 +1,6 @@
-import { client } from './';
+import { client } from '.';
 
-const url = '/contacts';
+const url = '/users';
 
 export function fetchContacts(){
   return dispatch => {
@@ -19,14 +19,17 @@ export function newContact() {
   }
 }
 
-export function saveContact(contact) {
+export function saveContact(user) {
+  
   return dispatch => {
     return dispatch({
       type: 'SAVE_CONTACT',
-      payload: client.post(url, contact)
+      payload: client.post(url, {user: user})
     })
   }
 }
+
+
 
 export function fetchContact(_id) {
   return dispatch => {
@@ -37,11 +40,11 @@ export function fetchContact(_id) {
   }
 }
 
-export function updateContact(contact) {
+export function updateContact(user) {
   return dispatch => {
     return dispatch({
       type: 'UPDATE_CONTACT',
-      payload: client.put(`${url}/${contact._id}`, contact)
+      payload: client.put(`${url}/${user._id}`, user)
     })
   }
 }
