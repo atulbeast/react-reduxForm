@@ -86,41 +86,7 @@ export default (state=defaultState, action={}) => {
       }
     }
 
-    case 'UPDATE_CONTACT_PENDING': {
-      return {
-        ...state,
-        loading: true
-      }
-    }
-
-    case 'UPDATE_CONTACT_FULFILLED': {
-      const user = action.payload.data;
-      return {
-        ...state,
-        users: state.users.map(item => item._id === user._id ? user : item),
-        errors: {},
-        loading: false
-      }
-    }
-
-    case 'UPDATE_CONTACT_REJECTED': {
-      const data = action.payload.response.data;
-      const { name, phone, email } = data.errors;
-      const errors = { global: data.message, name, phone, email };
-      return {
-        ...state,
-        errors: errors,
-        loading: false
-      }
-    }
-
-    case 'DELETE_CONTACT_FULFILLED': {
-      const _id = action.payload.data._id;
-      return {
-        ...state,
-        users: state.users.filter(item => item._id !== _id)
-      }
-    }
+    
 
     default:
       return state;

@@ -7,7 +7,7 @@ import ArticleReducer from './article-reducer';
 const reducers = {
   contactStore: ContactReducer,
   authStore: AuthReducer,
-  ArticleStore: ArticleReducer,
+  articleStore: ArticleReducer,
   form: formReducer
 }
 
