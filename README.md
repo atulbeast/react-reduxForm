@@ -30,13 +30,13 @@ Your default web browser will be launched automatically with the url http://loca
 semantic-ui is used for Styling Component
 
 # TOPIC COVERED
-CRUD
-REDUX
-REST API
-ROUTING
-COMPONENT HANDLING(PARENT/CHILD )
-STATES HANDLING
-REACT FORMS
+CRUD <br/>
+REDUX <br/>
+REST API <br/>
+ROUTING <br/>
+COMPONENT HANDLING(PARENT/CHILD ) <br/>
+STATES HANDLING <br/>
+REACT FORMS <br/>
 
 
 # react-reduxForm
